@@ -20,7 +20,11 @@ namespace RockPaperScissors
       {
         return "Player One Wins!";
       }
-      return "Error";
+      else
+      {
+        return "Player Two Wins!";
+      }
+      // return "Error";
     }
   }
 }
