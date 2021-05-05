@@ -39,5 +39,12 @@ namespace RockPaperScissors.Tests
       string outcome = RockPaperScissors.Game.WhoWon("scissors", "rock");
       Assert.AreEqual("Player Two Wins!", outcome);
     }
+
+    [TestMethod]
+    public void WhoWon_InvalidInput_Error()
+    {
+      string outcome = RockPaperScissors.Game.WhoWon("tacos", "rock");
+      Assert.AreEqual("Error", outcome);
+    }
   }
 }
