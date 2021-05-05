@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace RockPaperScissors
@@ -12,11 +11,11 @@ namespace RockPaperScissors
       {"paper", "scissors"},
       {"scissors", "rock"}
     };
-    
+
     public static string WhoWon(string playerOneChoice, string playerTwoChoice)
     {
       string[] validInputs = {"rock", "paper", "scissors"};
-      if(!((IList)validInputs).Contains(playerOneChoice) || !((IList)validInputs).Contains(playerTwoChoice))
+      if(!validInputs.Contains(playerOneChoice) || !validInputs.Contains(playerTwoChoice))
       {
         return "Error";
       }
