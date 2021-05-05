@@ -1,10 +1,17 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace RockPaperScissors
 {
   public class Game
   {
+    private static Dictionary<string, string> _whatWinsAgainstChoice = new Dictionary<string, string>()
+    {
+      {"rock", "paper"},
+      {"paper", "scissors"},
+      {"scissors", "rock"}
+    };
     public static string WhoWon(string playerOneChoice, string playerTwoChoice)
     {
       string[] validInputs = {"rock", "paper", "scissors"};
@@ -17,15 +24,9 @@ namespace RockPaperScissors
       {
         return "Draw";
       }
-      else if (playerOneChoice == "rock" && playerTwoChoice == "scissors")
-      {
-        return "Player One Wins!";
-      }
-      else if (playerOneChoice == "paper" && playerTwoChoice == "rock")
-      {
-        return "Player One Wins!";
-      }
-      else if (playerOneChoice == "scissors" && playerTwoChoice == "paper")
+
+      string winsAgainstPlayerOne = _whatWinsAgainstChoice[playerOneChoice];
+      if (playerTwoChoice != winsAgainstPlayerOne)
       {
         return "Player One Wins!";
       }
