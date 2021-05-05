@@ -1,9 +1,18 @@
+using System;
+using System.Collections;
+
 namespace RockPaperScissors
 {
   public class Game
   {
     public static string WhoWon(string playerOneChoice, string playerTwoChoice)
     {
+      string[] validInputs = {"rock", "paper", "scissors"};
+      if(!((IList)validInputs).Contains(playerOneChoice) || !((IList)validInputs).Contains(playerTwoChoice))
+      {
+        return "Error";
+      }
+
       if (playerOneChoice == playerTwoChoice)
       {
         return "Draw";
@@ -24,7 +33,6 @@ namespace RockPaperScissors
       {
         return "Player Two Wins!";
       }
-      // return "Error";
     }
   }
 }
