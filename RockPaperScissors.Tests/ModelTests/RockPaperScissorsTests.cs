@@ -11,5 +11,12 @@ namespace RockPaperScissors.Tests
       string outcome = RockPaperScissors.Game.WhoWon("rock", "rock");
       Assert.AreEqual("Draw", outcome);
     }
+
+    [TestMethod]
+    public void WhoWon_RockBeatsScissors_PlayerOneWins()
+    {
+      string outcome = RockPaperScissors.Game.WhoWon("rock", "scissors");
+      Assert.AreEqual("Player One Wins!", outcome);
+    }
   }
 }
