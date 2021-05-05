@@ -12,6 +12,10 @@ namespace RockPaperScissors
       {
         return "Player One Wins!";
       }
+      else if (playerOneChoice == "paper" && playerTwoChoice == "rock")
+      {
+        return "Player One Wins!";
+      }
       return "Error";
     }
   }
